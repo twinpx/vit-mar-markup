@@ -1,0 +1,101 @@
+<div id="b-page-wrapper">
+	<header class="b-header">
+		<div class="i-page-content b-header__menu-space">
+			<div class="i-page-content-pad">
+				<div class="b-header__phone">8 495 730 75 50</div>
+				<div class="b-header__cart">
+					<!--#if expr="$page='catalogue__group__item__order'" -->
+					<span class="b-header__cart__link i-active">3</span>
+					<!--#elif expr="$page='catalogue__group__item__order__result'" -->
+					<a href="/catalogue/group/item/order/" class="b-header__cart__link i-inside">3</a>
+					<!--#else -->
+					<a href="/catalogue/group/item/order/" class="b-header__cart__link">3</a>
+					<!--#endif -->
+				</div>
+				<nav class="b-header__menu">
+					<!--#if expr="$page='about'" -->
+					<span class="b-header__menu__item i-active">О компании</span>
+					<!--#else -->
+					<a href="/about/" class="b-header__menu__item">О компании</a>
+					<!--#endif -->
+					
+					<!--#if expr="$page='catalogue'" -->
+					<span class="b-header__menu__item i-active">Продукция</span>
+					<!--#elif expr="$page='catalogue__group' || $page='catalogue__group__item' || $page='catalogue__group__item__order' || $page='catalogue__group__item__order__result'" -->
+					<a href="/catalogue/" class="b-header__menu__item i-inside">Продукция</a>
+					<!--#else -->
+					<a href="/catalogue/" class="b-header__menu__item">Продукция</a>
+					<!--#endif -->
+					
+					<!--#if expr="$page='services'" -->
+					<span class="b-header__menu__item i-active">Услуги</span>
+					<!--#elif expr="$page='services__group' || $page='services__group__item'" -->
+					<a href="/services/" class="b-header__menu__item i-inside">Услуги</a>
+					<!--#else -->
+					<a href="/services/" class="b-header__menu__item">Услуги</a>
+					<!--#endif -->
+					
+					<!--#if expr="$page='address'" -->
+					<span class="b-header__menu__item i-active">Адрес</span>
+					<!--#else -->
+					<a href="/address/" class="b-header__menu__item">Адрес</a>
+					<!--#endif -->
+				</nav>
+				
+				<div class="i-clearfix"></div>
+			</div>
+		</div>
+	</header>
+	
+	<div class="i-wide-content b-header__logo-space" style="background-image: url(/images/banners/bg.jpg);">
+		<!--#if expr="$page='catalogue'" -->
+			<div class="b-theme-switch" id="b-theme-switch">
+				<div class="b-theme-switch__themes">
+					<div class="b-theme-switch__themes__item b-theme-switch__themes__item_1"></div>
+					<div class="b-theme-switch__themes__item b-theme-switch__themes__item_2"></div>
+					<div class="b-theme-switch__themes__item b-theme-switch__themes__item_3"></div>
+				</div>
+				
+				<div class="b-theme-switch__content">
+					<div class="i-page-content">
+						<div class="i-page-content-pad">
+							<div class="i-relative b-logo-block">
+								<a href="/" class="b-logo"><img src="/images/vit-mar-logo.png" width="100" height="99" alt=""></a>
+							</div>
+							<nav class="b-theme-switch__nav">
+								<a href="#" class="b-theme-switch__nav__item">1</a>
+								<a href="#" class="b-theme-switch__nav__item">2</a>
+								<a href="#" class="b-theme-switch__nav__item">3</a>
+							</nav>
+							<div class="b-slogan">Оконные ручки</div>
+							<div class="b-logo-space__button b-button-block">
+								<a href="/catalogue/group/item/order/" class="b-button">Сделать заказ</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--#else -->
+		<div class="i-page-content">
+			<div class="i-page-content-pad">
+				<div class="i-relative b-logo-block">
+					<a href="/" class="b-logo"><img src="/images/vit-mar-logo.png" width="100" height="99" alt=""></a>
+				</div>
+				<!--#if expr="$page='index'" -->
+				<h1 class="b-slogan">Производство комплектующих<br>для конструкций из ПВХ и алюминия</h1>
+				<div class="b-logo-space__button">
+					<a href="/catalogue/" class="b-button">Сделать заказ</a>
+				</div>
+				<!--#elif expr="$page='catalogue__group__item'" -->
+				<div class="b-slogan b-slogan__size_S">Производство комплектующих<br>для конструкций из ПВХ и алюминия</div>
+				<!--#elif expr="$page='catalogue__group' || $page='services'" -->
+				<div class="b-slogan">Оконные ручки</div>
+				<div class="b-logo-space__button">
+					<a href="/catalogue/group/item/order/" class="b-button">Сделать заказ</a>
+				</div>
+				<!--#endif -->
+				
+			</div>
+		</div>
+		<!--#endif -->
+	</div>

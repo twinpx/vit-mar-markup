@@ -1,0 +1,121 @@
+<!--#set var="page" value="catalogue__group__item__order" -->
+<!DOCTYPE html>
+<html>
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Сделать заказ ВИТМАР</title>
+</head>
+
+<body>
+
+<!--#include virtual="/blocks/header.html"-->
+
+<div class="i-page-content">
+	<div class="i-page-content-pad">
+
+		<div class="b-text-block">
+			<h1>Отправка заявки</h1>
+			
+			<div class="b-order">
+				<form action="result/" method="post">
+					<div class="b-order__items">
+						<h3 class="b-heading-icon i-order">Состав вашего заказа</h3>
+						<table class="b-order__table">
+							<colgroup>
+								<col class="b-order__image-col">
+								<col class="b-order__title-col">
+								<col class="b-order__num-col">
+								<col class="b-order__delete-col">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="b-order__image-td">
+										<a href="/catalogue/group/item/"><img src="/upload/1.jpg" height="100"></a>
+									</td>
+									<td class="b-order__title-td">
+										<a href="/catalogue/group/item/">Оконная ручка Hermo</a>
+									</td>
+									<td class="b-order__num-td">
+										<div class="b-form-field">
+											<label class="b-form-label b-form-label__display_inline">Кол-во</label>
+											<input type="number" name="" value="500" min="100" class="b-input-text" required>
+										</div>
+									</td>
+									<td class="b-order__delete-td">
+										<a href="" class="b-delete"></a>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-order__image-td">
+										<a href="/catalogue/group/item/"><img src="/upload/3.png" height="100"></a>
+									</td>
+									<td class="b-order__title-td">
+										<a href="/catalogue/group/item/">Оконная ручка HOPA lite</a>
+									</td>
+									<td class="b-order__num-td">
+										<div class="b-form-field">
+											<label class="b-form-label b-form-label__display_inline">Кол-во</label>
+											<input type="number" name="" value="20" min="20" class="b-input-text" required>
+										</div>
+									</td>
+									<td class="b-order__delete-td">
+										<a href="" class="b-delete"></a>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-order__image-td">
+										<a href="/catalogue/group/item/"><img src="/upload/3.png" height="100"></a>
+									</td>
+									<td class="b-order__title-td">
+										<a href="/catalogue/group/item/">Оконная ручка HOPA lite</a>
+									</td>
+									<td class="b-order__num-td">
+										<div class="b-form-field">
+											<label class="b-form-label b-form-label__display_inline">Кол-во</label>
+											<input type="number" name="" value="20" min="20" class="b-input-text" required>
+										</div>
+									</td>
+									<td class="b-order__delete-td">
+										<a href="" class="b-delete"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="b-order__form">
+						<h3 class="b-heading-icon i-partners b-heading-top">Заполните ваши реквизиты</h3>
+						<div class="b-grid">
+							<div class="b-grid__column b-grid__column__size_2">
+								<p class="b-p-top">Для оформления заказа нам понадобиться ваши реквизиты:<br>полное название, инн, кпп, бик.</p>
+								<div class="b-form-field">
+									<textarea name="" cols="10" rows="10" class="b-textarea" required></textarea>
+								</div>
+								<div class="b-form-submit">
+									<button type="submit" class="b-button">Отправить</button>
+								</div>
+							</div>
+							<div class="b-grid__column b-grid__column__size_1-5 b-grid__column__right b-order__form__right-column">
+								<div class="b-form-field">
+									<label class="b-form-label">Ваш контактный Email</label>
+									<input type="email" name="" value="" class="b-input-text" required>
+								</div>
+								<div class="b-form-field">
+									<label class="b-form-label">Ваш контактный Телефон</label>
+									<input type="tel" name="" value="" class="b-input-text" required>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			
+		</div>
+	
+	</div>
+</div>
+
+<!--#include virtual="/blocks/footer.html"-->
+
+</body>
+</html>

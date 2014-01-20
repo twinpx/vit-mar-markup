@@ -1,0 +1,98 @@
+<!--#set var="page" value="address" -->
+<!DOCTYPE html>
+<html>
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Адрес ВИТМАР</title>
+</head>
+
+<body>
+
+<!--#include virtual="/blocks/header.html"-->
+
+<div class="i-page-content">
+	<div class="i-page-content-pad">
+
+		<div class="b-text-block">
+			<h1>Адрес</h1>
+			<div class="b-grid">
+				<div class="b-grid__column b-grid__column__size_2">
+					<p class="b-p-top b-p-separated">Офис компания «ВИТМАР» находится в Москве, а производство расположено в Егорьевске.</p>
+					
+					<h3 class="b-heading-icon i-address">Офис в Москве</h3>
+					<p>Токмаков переулок, 14,<br>Москва, Россия.</p>
+					
+					<p>Email: <a href="mailto:info@vit-mar.ru" target="_blank">info@vit-mar.ru</a><br>
+					Телефон: 8 495 730 75 50</p>
+
+				</div>
+				<div class="b-grid__column b-grid__column__size_2">
+					<h3 class="b-heading-top b-heading-icon i-partners">Стать партнером</h3>
+					<p>Партнерский отдел компании приглашает вас стать постовщиками и  дилерами Витамар. Направления которые интересуют нашу компанию в первую очередь:</p>
+					<div class="b-button-block"><a href="/address/form/" class="b-button">Связаться с нами</a></div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+<div class="i-wide-content">
+	
+	<div class="b-text-block">
+		<div class="i-page-content">
+			<div class="i-page-content-pad">
+				<h2 class="b-heading-top">Схема проезда</h2>
+			</div>
+		</div>
+		<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"  type="text/javascript"></script>
+
+		<script type="text/javascript">
+			ymaps.ready(init);
+	
+			function init () {
+				var myMap = new ymaps.Map('map', {
+						center: [55.764703, 37.670546],
+						zoom: 16
+					}),
+					
+				myPlacemark = new ymaps.Placemark([55.764703, 37.670546], {
+					balloonContent: '<div style="font-family:Tornado Thin; font-size: 18pt; color: #51607d; text-align: left; padding: 14px; line-height: 1.5;">Токмаков переулок, 14,<br>Москва, Россия<\/div>'
+				}, {
+					iconImageHref: '/images/ymap-placemark.gif', // картинка иконки
+					iconImageSize: [41, 45], // размеры картинки
+					iconImageOffset: [-20, -45], // смещение картинки
+					balloonContentSize: [317, 118], // Размеры содержимого балуна
+					balloonLayout: "default#imageWithContent", // Задаем макет балуна - пользовательская картинка с контентом
+					balloonImageHref: '/images/ymap-balloon.gif', // Картинка балуна
+					balloonImageOffset: [-158, -118], // Смещение картинки балуна
+					balloonImageSize: [317, 118], // Размеры картинки балуна
+					balloonShadow: false // Балун не имеет тени
+				});
+				// Добавление метки на карту
+				myMap.geoObjects.add(myPlacemark);
+				
+				myMap.controls.add('zoomControl');
+				
+				myMap.events.add('click', function (e) {
+					if (!myMap.balloon.isOpen()) {
+						myPlacemark.click();
+					} else {
+						myMap.balloon.close();
+					}
+				});
+			}
+		</script>
+		
+		<div id="map">
+			<div class="b-top-shadow"></div>
+			<div class="b-bottom-shadow"></div>
+		</div>
+		
+	</div>
+</div>
+
+<!--#include virtual="/blocks/footer.html"-->
+
+</body>
+</html>
