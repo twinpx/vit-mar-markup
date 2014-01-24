@@ -8,7 +8,16 @@ $(function() {
 	fixedHeader();
 	
 	window.bTopBanner = new RotateBanner("b-theme-switch");
+	
+	deleteOrder();
 });
+
+function deleteOrder() {
+	$(".b-order__table .b-delete").click(function() {
+		if(confirm("Удалить из корзины?")) return true;
+		return false;
+	});
+}
 
 function RotateBanner(id) {
 	var self = this;
