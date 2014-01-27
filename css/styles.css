@@ -738,6 +738,7 @@ a.b-header__menu__item:hover {
 	height: 540px;
 }
 .b-ill__image img {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;

@@ -1,5 +1,7 @@
 $(function() {
-	ill();
+	$(".b-ill").each(function() {
+		new Ill(this);
+	});
 	
 	$("form").each(function() {
 		new Form(this);
@@ -36,10 +38,12 @@ function RotateBanner(id) {
 		self.$elem.data("RotateBanner", self);
 		self.activeItemIndex = 0;
 		self.$navBar = self.$elem.find(".b-theme-switch__nav");
+		self.delay = 5000;
 	}
 	
 	function makeHtml() {
 		makeNavBar();
+		self.$items.hide();
 		showItem(self.activeItemIndex);
 		
 		function makeNavBar() {
@@ -68,7 +72,7 @@ function RotateBanner(id) {
 		
 		self.$navBarItems.click(clickNavBarItem);
 		self.$elem.mouseenter(enterBanner).mouseleave(leaveBanner);
-		self.interval = setInterval(timeoutFunction, 2000);
+		self.interval = setInterval(timeoutFunction, self.delay);
 		
 		function enterBanner() {
 			clearInterval(self.interval);
@@ -76,7 +80,7 @@ function RotateBanner(id) {
 		}
 		
 		function leaveBanner() {
-			self.interval = setInterval(timeoutFunction, 2000);
+			self.interval = setInterval(timeoutFunction, self.delay);
 		}
 		
 		function clickNavBarItem() {
@@ -88,7 +92,7 @@ function RotateBanner(id) {
 			if(self.interval) {
 				clearInterval(self.interval);
 			}
-			self.interval = setInterval(timeoutFunction, 2000);
+			self.interval = setInterval(timeoutFunction, self.delay);
 			return false;
 		}
 		
@@ -138,14 +142,39 @@ function fixedHeader() {
 }
 
 
-function ill() {
-	$(".b-ill__color-nav__item").click(illNavItemClick);
+function Ill(elem) {
+	var self = this;
+	
+	init();
+	
+	function init() {
+		initVarsAndElems();
+		makeHtml();
+		handleEvents();
+	}
+	
+	function initVarsAndElems() {
+		self.$elem = $(elem);
+		self.$elem.data("Ill", self);
+		self.$nav = self.$elem.find(".b-ill__color-nav");
+		self.$navItems = self.$elem.find(".b-ill__color-nav__item");
+		self.$image = self.$elem.find(".b-ill__image");
+	}	
+	
+	function makeHtml() {
+		var color = self.$nav.find(".b-ill__color-nav__item.i-active").attr("data-color");
+		self.$image.find("img[data-color=" + color + "]").fadeIn();
+	}
+	
+	function handleEvents() {
+		self.$navItems.click(illNavItemClick);
+	}
 	
 	function illNavItemClick() {
 		var $navItem = $(this);
 		var color = $navItem.attr("data-color");
-		$navItem.closest(".b-ill").find(".b-ill__image").find("img:visible").fadeOut().end().find("img[data-color=" + color + "]").fadeIn();
-		$navItem.closest(".b-ill__color-nav").find(".i-active").animate({marginLeft: 0}, function() {
+		self.$image.find("img:visible").fadeOut().end().find("img[data-color=" + color + "]").fadeIn();
+		self.$nav.find(".i-active").animate({marginLeft: 0}, function() {
 			$(this).removeClass("i-active");
 		});
 		$navItem.animate({marginLeft: "45px"}, function() {
