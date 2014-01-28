@@ -731,6 +731,7 @@ a.b-header__menu__item:hover {
 }
 .b-ill__color-nav__item.i-active {
 	margin-left: 28px;
+	cursor: default;
 }
 .b-ill__image {
 	float: right;

@@ -172,6 +172,8 @@ function Ill(elem) {
 	
 	function illNavItemClick() {
 		var $navItem = $(this);
+		if($navItem.hasClass("i-active")) return;
+		
 		var color = $navItem.attr("data-color");
 		self.$image.find("img:visible").fadeOut().end().find("img[data-color=" + color + "]").fadeIn();
 		self.$nav.find(".i-active").animate({marginLeft: 0}, function() {
