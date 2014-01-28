@@ -716,6 +716,7 @@ a.b-header__menu__item:hover {
 .b-ill__color-nav {
 	float: left;
 	width: 45px;
+	margin-top: 20px;
 }
 .b-ill__color-nav__item {
 	display: block;
